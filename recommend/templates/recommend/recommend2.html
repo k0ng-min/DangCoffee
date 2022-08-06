@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recommend2.css' %">
+    <title>추천 사이트</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="intro_bg">
+
+            <!-- header -->
+            <div class="header">
+
+                <div class="logo">
+                    <a href="" class="logoname">DangCoffee</a>
+                </div>
+
+
+                <ul class="nav">
+                    <li><a href="#">정보</a></li>
+                    <li><a href="#">추천</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>
+
+            </div>
+            <!-- // header -->
+
+
+            <!-- tag -->
+            <ul class = "intro_title">
+                <div class="searcharea">
+                    <p>#tag</p>
+                </div>
+            </ul>
+            <!-- // tag -->
+
+
+        </div>
+
+
+
+        <!-- research result -->
+        <ul class="research-result">
+            <li>
+                <h3 class="result-text">검색어 : <b>{{ query }}</b></h3>    <!-- 검색어 출력 -->
+                    {% for product in products %}
+                        <div class="card" style="width: 18rem;">
+
+                            <a href="../product/{{product.pk}}"><img class="card-img-top" src="{{product.imageURL}}"></a>
+                            <div class="card-body">
+                                <h4 class="card-text">{{product.name}}</h4>
+                                <p class="card-text">{{product.price}}</p>
+                            </div>
+                        </div>
+                    {% end for %}
+
+            </li>
+
+            <li>
+                <h3 class="result-map">지도</h3>
+            </li>
+        </ul>
+        <!-- // research result -->
+
+
+
+
+    </div>
+
+
+    <!-- footer -->
+    <footer>
+        <nav>
+            <a href='' target='_blank'>DangCoffee</a>
+        </nav>
+        <p>
+            <span>DangCoffee</span><br/>
+            <span>Copyright 2022. All Rights Reserved.</span>
+        </p>
+    </footer>
+    <!-- // footer -->
+
+</body>
+</html>
