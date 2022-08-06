@@ -1,9 +1,3 @@
-    .대표 {
-        margin-top: 1rem;
-        text-align: center;
-        vertical-align: middle;
-        font-family: 'Jua', sans-serif;
-        }
     .팀 {
         margin-top: 1rem;
         text-align: center;
@@ -25,4 +19,5 @@
         line-height: 70px;
         float: right;
         font-family: 'Jua', sans-serif;
+        color: #EBDDCC;
     }

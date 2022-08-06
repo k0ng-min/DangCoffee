@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div style="text-align: center;">
+    <form action="/recommend/list/" method="post">
+        {% csrf_token %}
+        <input type="text" name="suggest_input">
+        <input type="submit" class="btn btn-primary" value="검색">
+    </form>
+    </div>
+    <div style="text-align: center;">
+        <div class="filter-search">
+            <table>
+                <tr>
+                    <th width="300px">카페</th>
+                    <td>
+                        <ul style="margin-top: 2rem; text-align: center;">
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox" value="220">
+                                </span>
+                                <label>스타벅스</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox" value="220">
+                                </span>
+                                <label>할리스</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>이디야</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>메가커피</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>빽다방</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>커피빈</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>공차</label>
+                            </a>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>음료</th>
+                    <td>
+                        <ul style="margin-top: 2rem;">
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox" style="" value="220">
+                                </span>
+                                <label>커피</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox" value="220">
+                                </span>
+                                <label>에이드</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>티</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>푸라푸치노</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>블렌디드</label>
+                            </a>
+                            <a>
+                                <span class="check-skin">
+                                    <input type="checkbox"value="220">
+                                </span>
+                                <label>기타</label>
+                            </a>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>가격</th>
+                    <td>
+                        <div style="margin-top: 2rem;", class="filter-price">
+                            <div class="filter-price-range">
+                                <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left:0%;"></span>
+                                    <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left:100%;"></span>
+                                </div>
+                            </div>
+                            <div class="filter-price-view">
+                                <input type="number" class="input-style01" id="amountStart">
+                                 만원 ~
+                                <input type="number" class="input-style01" id="amountEnd">
+                                 만원
+                            </div>
+                            <script>
+                                $(function() {
+                                    var min = 0;
+                                    var max = 100;
+                                    var $priceSlider = $('#sldier-range');
+                                    $priceSlider.slider({
+                                        range: true,
+                                        min: 0,
+                                        max: 100,
+                                        step: 5,
+                                        values: [ min, max ],
+                                        slide: function (event, ui) {
+                                            $('#amountStart').val(+ ui.values[ 0 ]);
+                                            $('#amountEnd').val(+ ui.values[ 1 ]);
+                                        }
+                                    });
+                                    $('#amountStart')
+                                        .on('keyup',function(){
+                                            var $this = $(this);
+                                            var val = $this.val() * 1;
+                                            if (val >= max) {
+                                                val = max;
+                                            }
+                                            else if (val <= min) {
+                                                val = min;
+                                            }
+
+                                            $this.val(val);
+                                            $priceSlider.slider('values', 0, $this.val() );
+                                        })
+                                        .val($priceSlider.slider('values', 0));
+                                    $('#amountEnd')
+                                        .on('keyup', function(){
+                                            var $this = $(this);
+                                            var val = $this.val() * 1;
+
+                                            if (val <= min) {
+                                                val = min;
+                                            }
+                                            else if (val >= max) {
+                                                val = max;
+                                            }
+
+                                            $this.val(val);
+                                            $priceSlider.slider('values', 1, $this.val() );
+                                        })
+                                        .val($priceSlider.slider('valuew, 1'));
+                                })
+                            </script>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="btn-wrap">
+            <section class="container">
+                <form id="search-form">
+                <button style="border-radius: 1rem;">초기화</button>
+                <button style="border-radius: 1rem;">검색</button>
+            </form>
+            </section>
+        </div>
+    </div>
+{% endblock %}
