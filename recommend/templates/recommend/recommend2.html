@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+    <div class="wrap">
+        <div class="intro_bg">
+
+
+            <!-- tag -->
+            <ul class = "intro_title">
+                <div class="searcharea">
+                    <p>#tag</p>
+                </div>
+            </ul>
+            <!-- // tag -->
+
+
+        </div>
+
+
+
+        <!-- research result -->
+        <ul class="research-result">
+            <li>
+                <h3 class="result-text">검색어 : <b>{{ query }}</b></h3>    <!-- 검색어 출력 -->
+                    {% for product in products %}
+                        <div class="card" style="width: 18rem;">
+
+                            <a href="../product/{{product.pk}}"><img class="card-img-top" src="{{product.imageURL}}"></a>
+                            <div class="card-body">
+                                <h4 class="card-text">{{product.name}}</h4>
+                                <p class="card-text">{{product.price}}</p>
+                            </div>
+                        </div>
+                    {% end for %}
+
+            </li>
+
+            <li>
+                <h3 class="result-map">지도</h3>
+            </li>
+        </ul>
+        <!-- // research result -->
+
+
+
+
+    </div>
+</body>
+{% endblock %}
