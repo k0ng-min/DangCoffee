@@ -5,13 +5,10 @@
 
 <body>
     <div class="wrap">
-        <div class="intro_bg">
-
-
             <!-- tag -->
             <ul class = "intro_title">
                 <div class="searcharea">
-                    <p>#tag</p>
+                    <h3><b>{{ query }}</b></h3>
                 </div>
             </ul>
             <!-- // tag -->
@@ -34,12 +31,12 @@
                                 <p class="card-text">{{product.price}}</p>
                             </div>
                         </div>
-                    {% end for %}
+                    {% endfor %}
 
             </li>
 
             <li>
-                <h3 class="result-map">지도</h3>
+                <h3 class="result-text">지도</h3>
             </li>
         </ul>
         <!-- // research result -->

@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
-<script src="jquerymin.js"></script>
-<script src="jqueryyui.js"></script>
 
 {% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 
+<div class="wrap">
+    <div class="header">
+        <ul class = "intro_title">
+            <div class="searcharea">
+                <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
+                <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
+                <form class="form-inline" action='/recommend2' method="get">
+                    <input style="margin-bottom:1100px; margin-left: 380px;" type="search" placeholder="Search" name="keyword">
+                </form>
+            </div>
+        </ul>
+    </div>
+</div>
         <!-- multiple filter -->
         <ul class="filter">
 
@@ -69,35 +84,33 @@
                     </div>
 
                     <div class="div">
-                        <input type="checkbox" id="b1" \>
-                        <label for="b1">티/티 라떼</label>
+                        <input type="checkbox" id="b2" \>
+                        <label for="b2">티/티 라떼</label>
                     </div>
 
                     <div class="div">
-                        <input type="checkbox" id="c1" \>
-                        <label for="c1">에이드/스무디</label>
+                        <input type="checkbox" id="c3" \>
+                        <label for="c3">에이드/스무디</label>
                     </div>
 
                     <div class="div">
-                        <input type="checkbox" id="d2" \>
-                        <label for="d2">프라페</label>
+                        <input type="checkbox" id="d4" \>
+                        <label for="d4">프라페</label>
                     </div>
 
                     <div class="div">
-                        <input type="checkbox" id="e3" \>
-                        <label for="e3">생과일 주스</label>
+                        <input type="checkbox" id="e5" \>
+                        <label for="e5">생과일 주스</label>
                     </div>
 
                     <div class="div">
-                        <input type="checkbox" id="f4" \>
-                        <label for="f4">차</label>
+                        <input type="checkbox" id="f6" \>
+                        <label for="f6">차</label>
                     </div>
+
                 </section>
             </li>
             <!-- // drink list -->
-
-
-
 
 
             <!-- price list -->
@@ -224,7 +237,7 @@
 
                 <!-- transport button -->
                 <div class="transport">
-                    <a href="" class="btn1" >저장</a>
+                    <a href='/recommend2' class="btn1" >저장</a>
                     <a href="" class="btn2" >초기화</a>
                 </div>
                 <!-- // transport button -->

@@ -1,3 +1,4 @@
+from django.http import request
 from django.shortcuts import render
 from .models import Product
 from django.db.models import Q
@@ -46,3 +47,8 @@ def filterresearch(request):
         )
 
     return render(request, 'recommend2.html', {'products': products})
+
+def input_test(request):
+    if request.POST:
+        list_item = request.POST.getlist('test')
+        print(list_item)
