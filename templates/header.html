@@ -1,19 +1,27 @@
+<div class="wrap">
+    <div class="intro_bg">
+        <div class="header">
+            <div class="logo">
+                <a href="" class="logoname">DangCoffee</a>
+            </div>
 
+            <ul class="nav">
+                <li><a>정보</a></li>
+                <li><a>추천</a></li>
+                <li><a>마이페이지</a></li>
+                <li><a>로그아웃</a></li>
+            </ul>
+        </div>
 
-    <span class="material-icons">coffee</span>
-    <h1 class="Dang">DangCoffee</h1>
-    <a class="log" href="{% url 'LogInOutApp:login' %}">
-        <h3 >로그인</h3>
-    </a>
-    <a class="log">
-        <h3 >회원가입</h3>
-    </a>
-    <a class="log">
-        <h3 >정보</h3>
-    </a>
+        <ul class = "intro_title">
+            <div class="searcharea">
+                    <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
+                    <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
+                <form class="form-inline" action="{% url 'recommend:search' %}" method="get">
+                    <input type="search" placeholder="Search" name="keyword">
+                </form>
+            </div>
+        </ul>
+    </div>
 
-    <a class="log">
-        <h3 >추천</h3>
-    </a>
-
-
+</div>
