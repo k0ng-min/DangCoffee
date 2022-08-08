@@ -20,33 +20,22 @@ def recommend2(request):
 
 
 def searchresult(request):
-    if 'keyword' in request.GET:
-        query = request.GET.get('keyword')
-        # GET방식으로 받은 KEYWORD를 QUERY라고 칭함
+    if ('keyword' in request.GET) and ('cafe[]' and 'drink[]' in request.POST):
+        query = request.GET('keyword' and 'cafe[]' and 'drink')
 
         products = Product.objects.all().filter(
             Q(name__icontains=query) |
             Q(description__icontains=query) |
-            Q(cafe__icontains=query)
+            Q(cafe__icontains=query) |
+            Q(category__icontains=query)
         )
         # PRODUCT에서 filter를 통해 검사
         # __icontains로 name 안에 query와 동일한 값이 있는지 대소문자 상관없이 검색
 
-    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+        return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+
     # 검색결과로 query랑 products 리턴
 
-
-def filterresearch(request):
-    if 'cafelist' and 'drinklist' in request.GET:
-        cafe_list = request.GET.getlist('cafelist[]')
-        drink_list = request.GET.getlist('drinklist[]')
-
-        products = Product.objects.all().filter(
-            Q(cafe__icontains=cafe_list) &
-            Q(name_icontains=drink_list)
-        )
-
-    return render(request, 'recommend2.html', {'products': products})
 
 def input_test(request):
     if request.POST:
