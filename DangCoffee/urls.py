@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.home),
     path('recommend1/', views.recommend1),
     path('recommend2/', include('recommend.urls')),
+    path('accounts/', include('accounts.urls'))
 ]
