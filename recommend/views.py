@@ -7,7 +7,7 @@ from django.db.models import Q
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
 
 
 def recommend1(request):
