@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'recommend',
     'accounts',
+    'mypage',
 
     'django.contrib.sites',
     'allauth',
