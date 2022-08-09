@@ -1,7 +1,16 @@
-<form action="{% url 'accounts:login' %}" method="POST">
+{% extends 'base.html' %}
+
+{% load static %}
+{% load socialaccount %}
+
+{% block content %}
+
+<form action="{% url 'login' %}" method="POST">
     {% csrf_token %}
     username : <input type="text" name="username"><br/>
     password : <input type="'password" name="password"><br/>
 
     <input type="submit" value="로그인">
 </form>
+
+{% endblock %}
