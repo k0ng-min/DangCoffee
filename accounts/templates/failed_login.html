@@ -3,9 +3,37 @@
 {% load static %}
 
 {% block content %}
+    <body class="bg-gradient-success">
 
-<h1> 존재하지 않는 회원입니다. 다시 시도해 주세요.</h1>
-<br/>
-<a href="{% url 'login' %}">로그인</a>
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                    </div>
+                                    <h2> 존재하지 않는 회원입니다. 다시 시도해 주세요.</h2>
+                                    <br/>
+                                    <a href="{% url 'login' %}">로그인</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </body>
 
 {% endblock %}

@@ -9,7 +9,14 @@
                 <li><a>정보</a></li>
                 <li><a>추천</a></li>
                 <li><a>마이페이지</a></li>
-                <li><a href="{% url 'login' %}">로그인</a></li>
+
+                {% if user.is_authenticated %}
+                <!-- <span class="#">{{user.username}}</span> -->
+                <li><a href="{% url 'home' %}"> Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+
             </ul>
         </div>
 

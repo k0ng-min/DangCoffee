@@ -6,6 +6,7 @@ def login(request):
     if request.method == 'POST':
         userid = request.POST['username']
         pwd = request.POST['password']
+        # DB에 등록되어 있는 회원인지의 여부를 검사 -> 있으면 User 객체 반환
         user = auth.authenticate(request, username=userid, password=pwd)
 
         if user is not None:

@@ -8,7 +8,7 @@ from mypage import views as mypage_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('home/', views.home, name='home'),
 
     path('recommend1/', views.recommend1),
     path('recommend2/', include('recommend.urls')),
