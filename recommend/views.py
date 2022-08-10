@@ -1,4 +1,3 @@
-from django.http import request
 from django.shortcuts import render
 from .models import Product
 from django.db.models import Q
@@ -19,22 +18,32 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
-def searchresult(request):
-    if ('keyword' in request.GET) and ('cafe[]' and 'drink[]' in request.POST):
-        query = request.GET('keyword' and 'cafe[]' and 'drink')
+def search(request, priceRangeMin=None, priceRangeMax=None):
+    if 'keyword' in request.GET:
+        query = request.GET.get('keyword')
 
         products = Product.objects.all().filter(
             Q(name__icontains=query) |
             Q(description__icontains=query) |
-            Q(cafe__icontains=query) |
-            Q(category__icontains=query)
+            Q(cafe__icontains=query)
         )
-        # PRODUCT에서 filter를 통해 검사
-        # __icontains로 name 안에 query와 동일한 값이 있는지 대소문자 상관없이 검색
 
-        return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+    if request.method=="POST":
 
-    # 검색결과로 query랑 products 리턴
+        if 'cafe' and 'drink' and 'priceRangeMin' and 'priceRangeMax' in request.POST:
+            saved = Product()
+            saved.cafe = request.POST.getlist('cafe')
+            saved.category = request.POST.getlist('drink')
+            query = saved.cafe and saved.category
+
+            products = Product.objects.all().filter(
+                Q(cafe=saved.cafe) &
+                Q(category=saved.category) &
+                (priceRangeMin <= products.price <= priceRangeMax)
+            )
+
+    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+
 
 
 def input_test(request):

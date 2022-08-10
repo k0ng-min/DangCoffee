@@ -5,7 +5,7 @@ from . import views
 app_name = 'recommend'
 
 urlpatterns = [
-    path('', views.searchresult, name="search"),
+    path('', views.search, name="search"),
 ]
 
 

@@ -178,14 +178,16 @@
                             <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%"></a>
                         </div>
                         <div class="slider-result">
-                            <p class="left">
+
+                            <form class = "left" action="/recommend2" method="get">
                                 <input type="text" class="num" id="priceRangeMin" name="priceRangeMin" title="가격 최소값(숫자만 입력 가능, 0이상)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
                                 <span class="unit">원</span>
-                            </p>
-                            <p class="right">
+                            </form>
+
+                            <form class = "right" action="/recommend2" method="get">
                                 <input type="text" class="num" id="priceRangeMax" name="priceRangeMax" title="가격 최대값 (숫자만 입력 가능)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
                                 <span class="unit">원</span>
-                            </p>
+                            </form>
                         </div>
                     </div><!-- // slider-price-wrap -->
 
