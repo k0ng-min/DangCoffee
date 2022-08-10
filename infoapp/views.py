@@ -1,13 +1,16 @@
-from django.http import JsonResponse
 from django.shortcuts import render
-from .models import Product, Menu
-from django.db.models import Q
-import json
 
-from django.views import View
+# Create your views here.
+from django.views.generic import ListView
+
+import infoapp.models
 
 
-class MenuView(View):
-    def get(self, request):
-        menu = list(Menu.objects.values())
-        return JsonResponse({'data': menu}, status=200)
+def MainSearch(request) :
+    return render(request, 'info/list.html')
+
+class ProductListView(ListView):
+    model = infoapp.models.Product
+    context_object_name = 'product_list'
+    template_name = 'infoapp/list.html'
+    paginate_by = 10

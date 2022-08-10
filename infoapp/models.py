@@ -25,11 +25,9 @@ class Image(models.Model):
     image_url = models.URLField(max_length=2000)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
-
 class Allergy(models.Model):
     name = models.CharField(max_length=30)
     products = models.ManyToManyField('Product', through='AllergyProduct')
-
 
 class AllergyProduct(models.Model):
     allergy = models.ForeignKey('Allergy', on_delete=models.CASCADE)

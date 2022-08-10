@@ -234,7 +234,11 @@ label{
 
 label::before{
     content: "";
+<<<<<<< HEAD
     background: url("./image/check-circle.svg");
+=======
+    background: url("/static/img/check-circle.svg");
+>>>>>>> 4c83e5a8d723935872ac2e8ec236b1126e7d4455
     background-position: center;
     background-size: contain;
     width: 24px;
@@ -436,4 +440,8 @@ footer{
     display: inline-block;
     margin-right: 60px;
 }
+<<<<<<< HEAD
 /* footer */
+=======
+/* footer */
+>>>>>>> 4c83e5a8d723935872ac2e8ec236b1126e7d4455
