@@ -8,7 +8,8 @@
             <ul class="nav">
                 <li><a>정보</a></li>
                 <li><a>추천</a></li>
-                <li><a>마이페이지</a></li>
+
+                <li><a href="{% url 'mypage' %}">마이페이지</a></li>
 
                 {% if user.is_authenticated %}
                 <!-- <span class="#">{{user.username}}</span> -->

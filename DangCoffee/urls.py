@@ -18,6 +18,6 @@ urlpatterns = [
     path('signup/', accounts_views.signup, name='signup'),
     path('accounts/', include('allauth.urls')),
 
-    path('mypage/', mypage_views.first),
+    path('mypage/', mypage_views.first, name='mypage'), # 맞는 건가..?
 
 ]
