@@ -27,6 +27,7 @@ def search(request, priceRangeMin=None, priceRangeMax=None):
             Q(description__icontains=query) |
             Q(cafe__icontains=query)
         )
+        return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
     if request.method=="POST":
 
@@ -34,15 +35,13 @@ def search(request, priceRangeMin=None, priceRangeMax=None):
             saved = Product()
             saved.cafe = request.POST.getlist('cafe')
             saved.category = request.POST.getlist('drink')
-            query = saved.cafe and saved.category
 
             products = Product.objects.all().filter(
                 Q(cafe=saved.cafe) &
-                Q(category=saved.category) &
-                (priceRangeMin <= products.price <= priceRangeMax)
+                Q(category=saved.category)
             )
-
-    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+            if priceRangeMin <= products.price <= priceRangeMax:
+                return render(request, 'recommend/recommend2.html', {'products': products})
 
 
 
