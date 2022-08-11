@@ -8,7 +8,7 @@ from mypage import views as mypage_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home, name='home'),
+    path('home/', views.home, name='home'), # ' '로 변경!
 
     path('recommend1/', views.recommend1),
     path('recommend2/', include('recommend.urls')),

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User # USER라고 하는 내장된 객체(테이블)을 장고는 이미 갖고 있음
 
 def login(request):
+    # POST 요청이 들어오면, 로그인 처리
     if request.method == 'POST':
         userid = request.POST['username']
         pwd = request.POST['password']
@@ -14,7 +15,7 @@ def login(request):
             return redirect('home')
         else:
             return render(request, 'failed_login.html')
-
+    # GET 요청이 들어오면, login form을 담고 있는 login.html을 띄어줌
     else:
         return render(request, 'login.html')
 

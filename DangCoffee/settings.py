@@ -59,7 +59,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-LOGIN_REDIRECT_URL = '/'
+# views.py 내에 작성 대신, 아래와 같이 가능 (로그인 성공 -> 홈으로 리다이렉트)
+LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
