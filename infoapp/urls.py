@@ -1,8 +1,11 @@
 from django.urls import path
-from .views import MainSearch
+from . import views
+from .views import CategoryView, MenuView, ProductView
 
-app_name='info'
+app_name='infoapp'
 
 urlpatterns = [
-    path('infolist/', MainSearch, name='infoapp'),
+    path('/menu', MenuView.as_view()),
+    path('/category', CategoryView.as_view()),
+    path('/product', ProductView.as_view()),
 ]
