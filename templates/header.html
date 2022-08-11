@@ -2,12 +2,13 @@
     <div class="intro_bg">
         <div class="header">
             <div class="logo">
-                <a href="" class="logoname">DangCoffee</a>
+                <a href="/" class="logoname">DangCoffee</a>
             </div>
 
             <ul class="nav">
                 <li><a>정보</a></li>
-                <li><a>추천</a></li>
+
+                <li><a href='/recommend1'>추천</a></li>
 
                 <li><a href="{% url 'mypage' %}">마이페이지</a></li>
 
@@ -20,16 +21,6 @@
 
             </ul>
         </div>
-
-        <ul class = "intro_title">
-            <div class="searcharea">
-                    <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
-                    <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
-                <form class="form-inline" action="{% url 'recommend:search' %}" method="get">
-                    <input type="search" placeholder="Search" name="keyword">
-                </form>
-            </div>
-        </ul>
     </div>
 
 </div>

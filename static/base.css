@@ -259,7 +259,7 @@ label{
 
 label::before{
     content: "";
-    background: url("./image/check-circle.svg");
+    background: url("/static/img/check-circle.svg");
     background-position: center;
     background-size: contain;
     width: 24px;

@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
-<script src="jquerymin.js"></script>
-<script src="jqueryyui.js"></script>
 
 {% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
 
+<div class="wrap">
+    <div class="header">
+        <ul class = "intro_title">
+            <div class="searcharea">
+                <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
+                <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
+                <form class="form-inline" action='/recommend2' method="get">
+                    <input style="margin-bottom:1100px; margin-left: 380px; font-size: 30px;" type="search" placeholder="Search" name="keyword">
+                </form>
+            </div>
+        </ul>
+    </div>
+</div>
         <!-- multiple filter -->
         <ul class="filter">
 
@@ -13,44 +28,73 @@
                 <h1 class="cafe">카페</h1>
                 <section>
                     <div class="tag">
-                        <input type="checkbox" id="ab" \>
-                        <label for="ab">투썸 플레이스</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="ab" name="cafe[]" value="투썸 플레이스"\>
+                            <label for="ab">투썸 플레이스</label>
+                        </form>
+                    </div>
+
+
+
+                    <div class="tag">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="bc" name="cafe[]" value="이디야"\>
+                            <label for="bc">이디야</label>
+                        </form>
                     </div>
 
                     <div class="tag">
-                        <input type="checkbox" id="bc" \>
-                        <label for="bc">이디야</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="cd" name="cafe[]" value="스타벅스"\>
+                            <label for="cd">스타벅스</label>
+                        </form>
                     </div>
 
-                    <div class="tag">
-                        <input type="checkbox" id="cd" \>
-                        <label for="cd">스타벅스</label>
-                    </div>
+
 
                     <div class="tag">
-                        <input type="checkbox" id="de" \>
-                        <label for="de">할리스</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="de" name="cafe[]" value="할리스"\>
+                            <label for="de">할리스</label>
+                        </form>
                     </div>
 
-                    <div class="tag">
-                        <input type="checkbox" id="ef" \>
-                        <label for="ef">메가커피</label>
-                    </div>
+
 
                     <div class="tag">
-                        <input type="checkbox" id="fg" \>
-                        <label for="fg">공차</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="ef" name="cafe[]" value="메가커피"\>
+                            <label for="ef">메가커피</label>
+                        </form>
                     </div>
 
-                    <div class="tag">
-                        <input type="checkbox" id="gh" \>
-                        <label for="gh">커피빈</label>
-                    </div>
+
 
                     <div class="tag">
-                        <input type="checkbox" id="hi" \>
-                        <label for="hi">백다방</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="fg" name="cafe[]" value="공차"\>
+                            <label for="fg">공차</label>
+                        </form>
                     </div>
+
+
+
+                    <div class="tag">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="gh" name="cafe[]" value="커피번"\>
+                            <label for="gh">커피빈</label>
+                        </form>
+                    </div>
+
+
+
+                    <div class="tag">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="hi" name="cafe[]" value="백다방"\>
+                            <label for="hi">백다방</label>
+                        </form>
+                    </div>
+
                 </section>
             </li>
             <!-- // cafe list -->
@@ -63,41 +107,63 @@
             <li>
                 <h1 class="drink">음료</h1>
                 <section>
-                    <div class="div">
-                        <input type="checkbox" id="a1" \>
-                        <label for="a1">커피/라떼</label>
-                    </div>
 
                     <div class="div">
-                        <input type="checkbox" id="b1" \>
-                        <label for="b1">티/티 라떼</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="a1" name="drink[]" value="커피/라떼"\>
+                            <label for="a1">커피/라떼</label>
+                        </form>
                     </div>
 
-                    <div class="div">
-                        <input type="checkbox" id="c1" \>
-                        <label for="c1">에이드/스무디</label>
-                    </div>
+
 
                     <div class="div">
-                        <input type="checkbox" id="d2" \>
-                        <label for="d2">프라페</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="b2" name="drink[]" value="티/티 라떼"\>
+                            <label for="b2">티/티 라떼</label>
+                        </form>
                     </div>
 
-                    <div class="div">
-                        <input type="checkbox" id="e3" \>
-                        <label for="e3">생과일 주스</label>
-                    </div>
+
 
                     <div class="div">
-                        <input type="checkbox" id="f4" \>
-                        <label for="f4">차</label>
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="c3" name="drink[]" value="에이드/스무디"\>
+                            <label for="c3">에이드/스무디</label>
+                        </form>
                     </div>
+
+
+
+                    <div class="div">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="d4" name="drink[]" value="프라페"\>
+                            <label for="d4">프라페</label>
+                        </form>
+                    </div>
+
+
+
+                    <div class="div">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="e5" name="drink[]" value="생과일 주스"\>
+                            <label for="e5">생과일 주스</label>
+                        </form>
+                    </div>
+
+
+
+                    <div class="div">
+                        <form action="/recommend2" method="post">
+                            <input type="checkbox" id="f6" name="drink[]" value="차"\>
+                            <label for="f6">차</label>
+                        </form>
+                    </div>
+
+
                 </section>
             </li>
             <!-- // drink list -->
-
-
-
 
 
             <!-- price list -->
@@ -112,14 +178,16 @@
                             <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%"></a>
                         </div>
                         <div class="slider-result">
-                            <p class="left">
+
+                            <form class = "left" action="/recommend2" method="get">
                                 <input type="text" class="num" id="priceRangeMin" name="priceRangeMin" title="가격 최소값(숫자만 입력 가능, 0이상)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
                                 <span class="unit">원</span>
-                            </p>
-                            <p class="right">
+                            </form>
+
+                            <form class = "right" action="/recommend2" method="get">
                                 <input type="text" class="num" id="priceRangeMax" name="priceRangeMax" title="가격 최대값 (숫자만 입력 가능)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
                                 <span class="unit">원</span>
-                            </p>
+                            </form>
                         </div>
                     </div><!-- // slider-price-wrap -->
 
@@ -224,7 +292,7 @@
 
                 <!-- transport button -->
                 <div class="transport">
-                    <a href="" class="btn1" >저장</a>
+                    <a href='/recommend2' class="btn1" >저장</a>
                     <a href="" class="btn2" >초기화</a>
                 </div>
                 <!-- // transport button -->
