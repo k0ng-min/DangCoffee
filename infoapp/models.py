@@ -15,6 +15,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    product_id = models.IntegerField(verbose_name= 'app_id', null=True, blank = True)
     korean_name = models.CharField(max_length=100)
     english_name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
@@ -43,3 +44,8 @@ class Nutrition(models.Model):
     caffeine_mg = models.DecimalField(max_digits=5, decimal_places=1, null=True)
     size = models.CharField(max_length=30)
     product = models.OneToOneField('Product', on_delete=models.CASCADE)
+
+class info_list(models.Model):
+    info_list = models.CharField(verbose_name='info_list', max_length=100)
+    def __str__(self):
+        return self.info_list
