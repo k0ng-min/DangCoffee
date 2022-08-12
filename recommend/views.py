@@ -23,13 +23,17 @@ def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
 
         cafe = request.POST.getlist('cafe', None)
         category = request.POST.getlist('category', None)
-        query = cafe and category
+        maxvalue = request.POST.get('priceRangeMax')
+        minvalue = request.POST.get('priceRangeMin')
+        query = "Tag List"
 
         q = Q()
         if cafe:
             q &= Q(cafe__icontain=cafe)
         if category:
             q &= Q(category__icontain=category)
+        if maxvalue and minvalue:
+            q &= Product.objects.filter(price__range=[minvalue, maxvalue])
 
         products = Product.objects.filter(q)
 
@@ -39,9 +43,9 @@ def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
 
         j = Q()
         if query:
-            j &= Q(name__icontains=query)
-            j &= Q(description__icontains=query)
-            j &= Q(cafe__icontains=query)
+            j |= Q(name__icontains=query)
+            j |= Q(description__icontains=query)
+            j |= Q(cafe__icontains=query)
         products = Product.objects.filter(j)
 
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
