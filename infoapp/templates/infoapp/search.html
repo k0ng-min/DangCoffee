@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="infoapp/result.html/" method='GET'>
+	제목 검색: <input type='search' name='query'>
+	<input type='submit' value='검색'>
+</form>
+
+{% endblock %}

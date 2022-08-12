@@ -2,16 +2,27 @@ from django.db import models
 
 # Create your models here.
 
+
+from django.db import models
+
+from django.db import models
+
+# Create your models here.
+
 from django.db import models
 
 
 class Menu(models.Model):
     name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
     menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -20,6 +31,8 @@ class Product(models.Model):
     english_name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.korean_name
 
 
 class Image(models.Model):
@@ -29,6 +42,8 @@ class Image(models.Model):
 class Allergy(models.Model):
     name = models.CharField(max_length=30)
     products = models.ManyToManyField('Product', through='AllergyProduct')
+    def __str__(self):
+        return self.name
 
 class AllergyProduct(models.Model):
     allergy = models.ForeignKey('Allergy', on_delete=models.CASCADE)
