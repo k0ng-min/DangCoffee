@@ -40,26 +40,26 @@ INSTALLED_APPS = [
     'recommend',
     'accounts',
     'mypage',
-
+    
+    # 소셜 로그인 구현
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
-    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.google', # 구글 provider 등록
 ]
 
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
+    # Needed to login by username in Django admin, regardless of `allauth` (기존 장고 인증 기능)
     'django.contrib.auth.backends.ModelBackend',
 
-    # `allauth` specific authentication methods, such as login by e-mail
+    # `allauth` specific authentication methods, such as login by e-mail (소셜 로그인 기능)
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# views.py 내에 작성 대신, 아래와 같이 가능 (로그인 성공 -> 홈으로 리다이렉트)
+# views.py 내에 작성 대신, 아래와 같이 가능 (로그인 성공 -> 홈('/')으로 리다이렉트)
 LOGIN_REDIRECT_URL = 'home'
 
 MIDDLEWARE = [

@@ -41,7 +41,7 @@
                                         </div>
                                         <br/><br/><br/>
                                         <input type="submit" value="로그인" class="btn btn-success btn-user btn-block">
-                                        <hr>
+                                        <hr> <!-- 소셜 로그인 연동 (구글) -->
                                         <a href="{% provider_login_url 'google' %}" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> 구글 계정으로 로그인
                                         </a>
@@ -80,6 +80,8 @@
         password : <input type="password" name="password">
         <br/>
         <input type="submit" value="로그인">
+
+        <a class="#" href="{% provider_login_url 'google' %}">구글 계정으로 로그인</a>
     </form>
 
 -->
