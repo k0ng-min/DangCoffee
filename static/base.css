@@ -11,7 +11,7 @@
 .intro_bg{
     background-image: url("/static/img/cafeimage.jpg");
     background-size: cover;
-    height: 700px;
+    height: 120px;
 }
 
 /* 페이지 맨 윗 부분 */
@@ -35,9 +35,9 @@
     width: 250px;
     height: 40px;
     padding-left:10px;
-    padding-top:20px;
     font-weight: bold;
     font-size:40px;
+    position: absolute;
 }
 
 .nav{
@@ -392,7 +392,18 @@ label::after{
 /* 다중 필터 > 저장/초기화 */
 /* 다중 필터 */
 
+/* 카드 바디*/
+.card-body{
+    width: 600px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.card-text{
+    text-align: center;
+}
+.car
 
+/* 카드 바디*/
 
 
 /* footer */

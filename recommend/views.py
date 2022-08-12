@@ -18,8 +18,21 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
-def search(request, priceRangeMin=None, priceRangeMax=None):
-    if 'keyword' in request.GET:
+def search(request):
+    if request.method == "POST":
+        product = Product()
+        if product.is_valid():
+            product.cafe = request.POST.getlist('cafe', None)
+            product.category = request.POST.getlist('drink', None)
+            product.image = request.FILES['image']
+            query = product.cafe and product.category
+            if product:
+                products = Product.objects.all().filter(
+                    Q(cafe=product.cafe) &
+                    Q(category=product.category)
+                )
+
+    else:
         query = request.GET.get('keyword')
 
         products = Product.objects.all().filter(
@@ -27,25 +40,11 @@ def search(request, priceRangeMin=None, priceRangeMax=None):
             Q(description__icontains=query) |
             Q(cafe__icontains=query)
         )
-        return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
-
-    if request.method=="POST":
-
-        if 'cafe' and 'drink' and 'priceRangeMin' and 'priceRangeMax' in request.POST:
-            saved = Product()
-            saved.cafe = request.POST.getlist('cafe')
-            saved.category = request.POST.getlist('drink')
-
-            products = Product.objects.all().filter(
-                Q(cafe=saved.cafe) &
-                Q(category=saved.category)
-            )
-            if priceRangeMin <= products.price <= priceRangeMax:
-                return render(request, 'recommend/recommend2.html', {'products': products})
-
+    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
 
 def input_test(request):
     if request.POST:
         list_item = request.POST.getlist('test')
         print(list_item)
+
