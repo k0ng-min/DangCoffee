@@ -23,8 +23,8 @@ def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
 
         cafe = request.POST.getlist('cafe', None)
         category = request.POST.getlist('category', None)
-        maxvalue = request.POST.get('priceRangeMax')
-        minvalue = request.POST.get('priceRangeMin')
+        maxvalue = request.GET.get('priceRangeMax')
+        minvalue = request.GET.get('priceRangeMin')
         query = "Tag List"
 
         q = Q()
@@ -34,6 +34,8 @@ def search(request, priceRangeMin=None, priceRangeMax=None, ordering=None):
             q &= Q(category__icontain=category)
         if maxvalue and minvalue:
             q &= Product.objects.filter(price__range=[minvalue, maxvalue])
+
+        q &= Q(price__range=(minvalue, maxvalue))
 
         products = Product.objects.filter(q)
 

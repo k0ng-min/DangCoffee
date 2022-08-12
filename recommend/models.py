@@ -8,7 +8,7 @@ class Product(models.Model):
     category = models.CharField(max_length=100, default=None, null=True)
     cafe = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
-    price = models.FloatField()
+    price = models.IntegerField()
     digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
