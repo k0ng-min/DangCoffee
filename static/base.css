@@ -202,9 +202,10 @@
     margin-left: 5px;
 }
 
-.price{
+.tax{
     font-family: "Roboto", sans-serif;
     margin: 16px 0;
+    border-left: 5px solid lightblue;
     color: #2c3e50;
     padding-left: 16px;
     margin-left: 5px;
@@ -276,6 +277,7 @@ label::after{
 
 #wrap{
     margin:0 auto;
+    margin-top : 100px;
 }
 
 #wrap h1{
@@ -325,11 +327,18 @@ label::after{
     background:#41465c;
 }
 
-.slider-price-wrap .slider-result{
+.slider-price-wrap{
+    margin-top:20px;
+    width:300px;
+    font-size:14px;
+}
+
+.slider-result {
     margin-top:20px;
     width:240px;
     font-size:14px;
 }
+
 
 .slider-price-wrap .slider-result:after{
     content:"";
@@ -339,19 +348,21 @@ label::after{
 
 .slider-price-wrap .slider-result .left{
     float:left;
+    margin-left : 10px;
     width:50%;
 }
 
 .slider-price-wrap .slider-result .right{
-    float:right;
-    width:50%;
+    position: sticky;
+    margin-left : 220px;
+    width: 100px;
     text-align:right;
 }
 
 .slider-price-wrap .slider-result .num{
     font-size:14px;
     color:#000000;
-    width:inherit;
+    width: 60px;
 }
 
 .slider-price-wrap .slider-result .right .num{
@@ -370,9 +381,8 @@ label::after{
 
 /* 다중 필터 > 저장/초기화 */
 .transport{
-
-    margin-left: 110px;
-    margin-top: 220px;
+    margin-left: 220px;
+    margin-top: 40px;
 }
 
 .btn1{
@@ -401,7 +411,10 @@ label::after{
 .card-text{
     text-align: center;
 }
-.car
+
+.card-img{
+    text-align: center;
+}
 
 /* 카드 바디*/
 

@@ -20,28 +20,37 @@ def recommend2(request):
 
 def search(request):
     if request.method == "POST":
-        product = Product()
-        if product.is_valid():
-            product.cafe = request.POST.getlist('cafe', None)
-            product.category = request.POST.getlist('drink', None)
-            product.image = request.FILES['image']
-            query = product.cafe and product.category
-            if product:
-                products = Product.objects.all().filter(
-                    Q(cafe=product.cafe) &
-                    Q(category=product.category)
-                )
+
+        cafe = request.POST.getlist('cafe')
+        category = request.POST.getlist('category')
+        maxvalue = request.GET.get('priceRangeMax')
+        minvalue = request.GET.get('priceRangeMin')
+        query = "Tag List"
+
+        q = Q()
+        if cafe:
+            q &= Q(cafe__icontain=cafe)
+        if category:
+            q &= Q(category__icontain=category)
+        if maxvalue and minvalue:
+            q &= Product.objects.filter(price__range=[minvalue, maxvalue])
+
+        q &= Q(price__range=(minvalue, maxvalue))
+
+        products = Product.objects.filter(q)
 
     else:
+
         query = request.GET.get('keyword')
 
-        products = Product.objects.all().filter(
-            Q(name__icontains=query) |
-            Q(description__icontains=query) |
-            Q(cafe__icontains=query)
-        )
-    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+        j = Q()
+        if query:
+            j |= Q(name__icontains=query)
+            j |= Q(description__icontains=query)
+            j |= Q(cafe__icontains=query)
+        products = Product.objects.filter(j)
 
+    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
 
 def input_test(request):
     if request.POST:

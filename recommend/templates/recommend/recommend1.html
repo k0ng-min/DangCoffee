@@ -14,14 +14,14 @@
                 <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
                 <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
                 <form class="form-inline" action='/recommend2' method="get">
-                    <input style="margin-top: 100px; margin-bottom:100px; margin-left: 380px; font-size: 30px;" type="search" placeholder="Search" name="keyword">
+                    <input style="margin-bottom:1100px; margin-left: 380px; font-size: 30px;" type="search" placeholder="Search" name="keyword">
                 </form>
             </div>
         </ul>
     </div>
 </div>
         <!-- multiple filter -->
-        <ul class="filter" style="margin-top: 300px;">
+        <ul class="filter">
 
             <!-- cafe list -->
             <li>
@@ -169,29 +169,32 @@
             <!-- price list -->
             <!-- http://happycgi.com/17178#2 '가격 검색에 이용가능한 가격 슬라이드 JQuery' 인용-->
             <li>
-                <div id="wrap">
-                    <div class="slider-price-wrap">
-                        <h1 class="price">가격</h1>
-                        <div id="priceRangeSet" class="slider-price ui-slider-horizontal ui-widget wi-widget-content ui-corner-all">
-                        <div class="ui-slider-range ui-widget-header" style="left: 0%; width:100%;"></div>
-                            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%"></a>
-                            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%"></a>
-                        </div>
-                        <div class="slider-result">
+                <h1 class="tax">가격</h1>
+                <section>
+                    <div id="wrap" >
+                        <div class="slider-price-wrap">
+                            <div id="priceRangeSet" class="slider-price ui-slider-horizontal ui-widget wi-widget-content ui-corner-all">
 
-                            <form class = "left" action="/recommend2" method="get">
-                                <input type="text" class="num" id="priceRangeMin" name="priceRangeMin" title="가격 최소값(숫자만 입력 가능, 0이상)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
-                                <span class="unit">원</span>
-                            </form>
+                            <div class="ui-slider-range ui-widget-header" style="left: 0%; width:100%;"></div>
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%"></a>
+                                <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%"></a>
+                            </div>
+                            <div class="slider-result">
 
-                            <form class = "right" action="/recommend2" method="get">
-                                <input type="text" class="num" id="priceRangeMax" name="priceRangeMax" title="가격 최대값 (숫자만 입력 가능)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
-                                <span class="unit">원</span>
-                            </form>
-                        </div>
-                    </div><!-- // slider-price-wrap -->
+                                <form class = "left" action="/recommend2" method="get">
+                                    <input type="text" class="num" id="priceRangeMin" name="priceRangeMin" title="가격 최소값(숫자만 입력 가능, 0이상)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
+                                    <span class="unit">원</span>
+                                </form>
 
-                </div>
+                                <form class = "right" action="/recommend2" method="get">
+                                    <input type="text" class="num" id="priceRangeMax" name="priceRangeMax" title="가격 최대값 (숫자만 입력 가능)" style="ime-mode:disabled;" onkeypress="txtOnlyNum(event)" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"  />
+                                    <span class="unit">원</span>
+                                </form>
+                            </div>
+                        </div><!-- // slider-price-wrap -->
+
+                    </div>
+                </section>
                 <!-- // wrap -->
 
                 <!-- 스크립트 -->
@@ -292,7 +295,7 @@
 
                 <!-- transport button -->
                 <div class="transport">
-                    <a href='/recommend2' class="btn1" >저장</a>
+                    <a href='/recommend2' class="btn1" >검색</a>
                     <a href="" class="btn2" >초기화</a>
                 </div>
                 <!-- // transport button -->
