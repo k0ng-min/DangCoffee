@@ -2,33 +2,57 @@
 {% load static %}
 
 {% block content %}
+<script>AOS.init();</script>
 
-<section id="home-main-section-top" class="background-pale-peach">
-  <div id="home-main-top">
-    <div class="home-main-desc">
-      <h1 class="home-main-title">웹 서비스<br>소개 1</h1>
-      <p class="text-m">
-        소개글1_1<br>소개글1_2
-      </p>
+<!-- ======= 당커피 Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-up" data-aos-delay="200">
+      <h1>당신을 위한 커피, 당커피</h1>
+      <h2>프렌차이즈별 커피 종류들을 한 눈에!</h2>
+      <a href="#info" class="btn-get-started scrollto">Get Started</a>
     </div>
-    <div class="home-main-image-top">
-       <img class="home-main-image-top" alt="소개 사진1" src="/static/img/home_img_1.jpg" />
-    </div>
-  </div>
-</section>
+  </section>
+<!-- End Hero -->
 
-<section id="home-main-section-top #2" class="background-pale-peach #2">
-  <div id="home-main-top #2">
-    <div class="home-main-desc #2">
-      <h1 class="home-main-title #2">웹 서비스<br>소개 2</h1>
-      <p class="text-m #2">
-        소개글2_1<br>소개글2_2
-      </p>
-    </div>
-    <div class="home-main-image-top #2">
-       <img class="home-main-image-top #2" alt="소개 사진2" src="https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-1-39ac203e8922f615aa3843337871cb654b81269e872494128bf08236157c5f6a.png" />
-    </div>
-  </div>
-</section>
+  <main id="main">
+
+    <!-- ======= 정보 소개 Section ======= -->
+    <section id="info" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <h2>'정보 페이지 관한 소개'</h2>
+            <h3>세부 소개</h3>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <img class="home-main-image-top" alt="소개 사진1" src="/static/img/home_img_1.jpg" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- End Section -->
+
+       <!-- ======= 추천 소개 Section ======= -->
+    <section id="recommend" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <h2>'정보 페이지 관한 소개'</h2>
+            <h3>세부 소개</h3>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <img class="home-main-image-top" alt="소개 사진1" src="/static/img/home_img_1.jpg" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- End Section -->
+
 
 {% endblock %}
