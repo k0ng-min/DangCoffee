@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.contrib.auth.models import User # User라고 하는 내장된 객체(테이블)을 장고는 이미 갖고 있음
@@ -24,19 +25,22 @@ def logout(request):
     return redirect('home')
 
 def signup(request):
-    if request.method == "POST":
-        if request.POST['Password'] == request.POST['Password (Repeat)']:
-            # 회원가입
-            new_user = User.objects.create_user(username=request.POST['ID'], password=request.POST['Password'])
-            # 로그인
-            auth.login(request, new_user)
-            # 홈 리다이렉션
-            return redirect('home')
+    if request.method == "GET":
         return render(request, 'signup.html')
-    return render(request, 'signup.html')
 
-def success_signup(request):
-    return render(request, 'success_signup.html')
+    elif request.method == "POST":
+        username = request.POST.get['User ID', None]    # 딕셔너리 형태
+        password = request.POST.get['Password', None]
+        re_password = request.POST.get['Password (Repeat)', None]
+        res_data = {}
+        if not (username and password and re_password):
+            res_data['error'] = "모든 값을 입력해야 합니다."
+        if password != re_password:
+            res_data['error'] = "비밀번호가 다릅니다."
+        else:
+            user = User(username=username, password=make_password(password))
+            user.save()
+        return render(request, 'success_signup.html')
 
 
 

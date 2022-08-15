@@ -129,11 +129,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'  # timezone 서울
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True  # 추가
+
+USE_TZ = False  # 변경 (T -> F)
 
 
 # Static files (CSS, JavaScript, Images)
