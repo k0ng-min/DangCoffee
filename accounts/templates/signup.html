@@ -17,33 +17,39 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4"> 회원 가입 </h1>
+                                <br>
+                                <h3>{{ error }}</h3>
+                                <br>
                             </div>
 
                             <form class="user" method="POST" action=".">
                                 {% csrf_token %}
                                 <div class="form-group row">
-                                    {{ error }}
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="User name">
+                                        <input type="text" class="form-control form-control-user" id="User name"
+                                            placeholder="사용자 이름">
                                     </div>
                                 </div>
+                                <br>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="User ID">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" name="User ID"
+                                        placeholder="ID를 입력하세요.">
                                 </div>
+                                <br>
 
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            name="Password" placeholder="비밀번호를 입력하세요.(8자리)">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Password (Repeat)">
+                                            name="Password (Repeat)" placeholder="비밀번호를 다시 입력하세요.">
                                     </div>
                                 </div>
+                                <br>
 
                                 <input type="submit" value="Register Account" class="btn btn-primary btn-user btn-block">
                                 <hr>
