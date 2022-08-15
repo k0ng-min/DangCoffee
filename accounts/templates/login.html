@@ -48,7 +48,7 @@
                                         </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="{% url 'signup' %}">회원이 아니신가요? 회원가입 하기</a>
+                                        <a class="small" href="{% url 'accounts:signup' %}">회원이 아니신가요? 회원가입 하기</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,17 +72,4 @@
     <!-- Custom scripts for all pages-->
     <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
-<!-- 로그인 폼만 (부트스트랩 X)
-
-    <form action="{% url 'login' %}" method = "POST">
-        {% csrf_token %}
-        username : <input type="text" name="username"><br/>
-        password : <input type="password" name="password">
-        <br/>
-        <input type="submit" value="로그인">
-
-        <a class="#" href="{% provider_login_url 'google' %}">구글 계정으로 로그인</a>
-    </form>
-
--->
 {% endblock %}

@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from django.contrib.auth.models import User # USER라고 하는 내장된 객체(테이블)을 장고는 이미 갖고 있음
+from django.contrib.auth.models import User # User라고 하는 내장된 객체(테이블)을 장고는 이미 갖고 있음
 
 def login(request):
     # POST 요청이 들어오면, 로그인 처리
     if request.method == 'POST':
-        userid = request.POST['username']
-        pwd = request.POST['password']
+        userid = request.POST.get('username')
+        pwd = request.POST.get('password')
         # DB에 등록되어 있는 회원인지의 여부를 검사 -> 있으면 User 객체 반환
         user = auth.authenticate(request, username=userid, password=pwd)
 
@@ -25,14 +25,18 @@ def logout(request):
 
 def signup(request):
     if request.method == "POST":
-        if request.POST['password'] == request.POST['repeat']:
+        if request.POST['Password'] == request.POST['Password (Repeat)']:
             # 회원가입
-            new_user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+            new_user = User.objects.create_user(username=request.POST['ID'], password=request.POST['Password'])
             # 로그인
             auth.login(request, new_user)
             # 홈 리다이렉션
             return redirect('home')
-    return render(request, 'register.html')
+        return render(request, 'signup.html')
+    return render(request, 'signup.html')
+
+def success_signup(request):
+    return render(request, 'success_signup.html')
 
 
 

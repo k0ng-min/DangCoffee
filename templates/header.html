@@ -15,10 +15,9 @@
                 {% endif %}
 
                 {% if user.is_authenticated %}
-                안녕하세요, {{ user.username }}님! <!-- 위치 변경 -->
-                <li><a href="{% url 'logout' %}"> Logout</a></li>
+                <li><a href="{% url 'accounts:logout' %}"> Logout</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
                 {% endif %}
 
             </ul>
