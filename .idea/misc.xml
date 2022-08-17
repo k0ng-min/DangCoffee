@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (DangCoffee)" project-jdk-type="Python SDK" />
+<<<<<<< HEAD
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
+=======
+>>>>>>> 4c83e5a8d723935872ac2e8ec236b1126e7d4455
+>>>>>>> 4de8f3dcc0ab0f2f2e92b43fd2efc57b468ce006
 </project>

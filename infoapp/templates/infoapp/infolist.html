@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="info/result" method='GET'>
+	음료 검색: <input type='search' name='query'>
+	<input type='submit' value='검색'>
+</form>
+
+<h1>음료 리스트</h1>
+{% for product in products %}
+    {{ product.korean_name }}<br/>
+    {{ product.category }}<br/>
+    {{ product.english_name }}<br/>
+    <br/>
+{% endfor %}
+
+{% endblock %}

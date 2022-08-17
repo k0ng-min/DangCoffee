@@ -25,19 +25,20 @@
 
 
                 {% for product in products %}
-                    <div class="card" style="width: 18rem;">
-
-                        <a href="../product/{{product.pk}}"><img class="card-img-top" src="{{product.imageURL}}"></a>
+                    <div style="width: 18rem;">
                         <div class="card-body">
-                            <h4 class="card-text">{{product.name}}</h4>
-                            <p class="card-text">{{product.price}}</p>
+                            <img class="card-img" src="/admin/image/">
+                            <h4 class="card-text">{{product.cafe}} | {{product.name}}</h4>
+                            <p class="card-text">{{product.price}}원</p>
                         </div>
                     </div>
                 {% endfor %}
                 {% if not products %}
-                <h3 style = "text-align:center; margin-top:30px" >no research</h3>
-                <a href="/recommend1" style="margin-left:400px;margin-top:20px">return</a>
+                <h3 style = "text-align:center; margin-top:30px" >검색 결과가 없습니다.</h3>
                 {% endif%}
+                <a href="/recommend1" class="btn2" style="margin-left: 500px; width: 60px; text-align: center;">돌아가기</a>
+
+
 
 
             </li>

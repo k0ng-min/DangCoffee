@@ -34,9 +34,8 @@
 }
 
 .intro_bg{
-    background-image: url("/static/img/cafeimage.jpg");
     background-size: cover;
-    height: 700px;
+    height: 120px;
 }
 
 /* 페이지 맨 윗 부분 */
@@ -55,14 +54,14 @@
 }
 
 .logoname{
-    color: white;
+    color: black;
     border: none;
     width: 250px;
     height: 40px;
     padding-left:10px;
-    padding-top:20px;
     font-weight: bold;
     font-size:40px;
+    position: absolute;
 }
 
 .nav{
@@ -72,6 +71,7 @@
     width:calc(1280px - 300px);
     color: white;
     margin-left: 400px;
+    margin-top : 15px;
 }
 
 .nav > li{
@@ -79,7 +79,8 @@
 }
 
 .nav > li  > a{
-    color: white;
+    color: black;
+    font-size : 18px;
 }
 /* 페이지 맨 윗 부분 */
 
@@ -107,8 +108,8 @@
     border: none;
     width: 500px;
     height: 80px;
-    background-color: rgba(0,0,0,0.3);
-    color:white;
+    background-color: gray;
+    color:black;
     border-radius:10px;
     text-align: center;
 }
@@ -194,6 +195,7 @@
     border-bottom: 1px;
     box-shadow: 2px 2px 2px 2px rgba(255,255,255,0.1);
     margin-bottom: 50px;
+    margin-top : 200px;
 }
 
 .filter > li{
@@ -221,15 +223,16 @@
 .drink{
     font-family: "Roboto", sans-serif;
     margin: 16px 0;
-    border-left: 5px solid green;
+    border-left: 5px solid bisque;
     color: #2c3e50;
     padding-left: 16px;
     margin-left: 5px;
 }
 
-.price{
+.tax{
     font-family: "Roboto", sans-serif;
     margin: 16px 0;
+    border-left: 5px solid lightblue;
     color: #2c3e50;
     padding-left: 16px;
     margin-left: 5px;
@@ -278,7 +281,7 @@ input[type="checkbox"]:checked +  label::before{
 
 label::after{
     content: "";
-    border: 2px solid #27ae60;
+    border: 2px solid green;
     width: 18px;
     height: 18px;
     position: absolute;
@@ -301,6 +304,7 @@ label::after{
 
 #wrap{
     margin:0 auto;
+    margin-top : 100px;
 }
 
 #wrap h1{
@@ -350,11 +354,18 @@ label::after{
     background:#41465c;
 }
 
-.slider-price-wrap .slider-result{
+.slider-price-wrap{
+    margin-top:20px;
+    width:300px;
+    font-size:14px;
+}
+
+.slider-result {
     margin-top:20px;
     width:240px;
     font-size:14px;
 }
+
 
 .slider-price-wrap .slider-result:after{
     content:"";
@@ -364,19 +375,21 @@ label::after{
 
 .slider-price-wrap .slider-result .left{
     float:left;
+    margin-left : 10px;
     width:50%;
 }
 
 .slider-price-wrap .slider-result .right{
-    float:right;
-    width:50%;
+    position: sticky;
+    margin-left : 220px;
+    width: 100px;
     text-align:right;
 }
 
 .slider-price-wrap .slider-result .num{
     font-size:14px;
     color:#000000;
-    width:inherit;
+    width: 60px;
 }
 
 .slider-price-wrap .slider-result .right .num{
@@ -395,9 +408,8 @@ label::after{
 
 /* 다중 필터 > 저장/초기화 */
 .transport{
-
-    margin-left: 110px;
-    margin-top: 220px;
+    margin-left: 220px;
+    margin-top: 40px;
 }
 
 .btn1{
@@ -417,7 +429,21 @@ label::after{
 /* 다중 필터 > 저장/초기화 */
 /* 다중 필터 */
 
+/* 카드 바디*/
+.card-body{
+    width: 600px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.card-text{
+    text-align: center;
+}
 
+.card-img{
+    text-align: center;
+}
+
+/* 카드 바디*/
 
 
 /* footer */
@@ -461,5 +487,9 @@ footer{
     display: inline-block;
     margin-right: 60px;
 }
+<<<<<<< HEAD
 /* footer */
 >>>>>>> fa99ab318014ebde9935211a041b7af03df4d774
+=======
+/* footer */
+>>>>>>> 4de8f3dcc0ab0f2f2e92b43fd2efc57b468ce006

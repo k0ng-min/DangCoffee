@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for product in products %}
+	<h4>음료명: {{ product.korean_name }}</h4>
+	<h4>카테고리: {{ product.category }}</h4>
+{% empty %}
+	검색 결과가 없습니다.
+{% endfor %}
+
+{% endblock %}
