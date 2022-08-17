@@ -26,3 +26,7 @@ def productresult(request):
 	if query:
 		products = Product.objects.filter(korean_name__contains=query)
 	return render(request, 'infoapp/result.html', {'products': products})
+
+
+
+

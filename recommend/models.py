@@ -5,11 +5,14 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    cafe = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     price = models.FloatField()
-    digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    cafe = models.ForeignKey('Cafe', on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
+class Cafe(models.Model):
+    name = models.CharField(max_length=100)
     def __str__(self):
         return self.name

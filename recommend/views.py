@@ -1,6 +1,6 @@
 from django.http import request
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Cafe
 from django.db.models import Q
 
 
@@ -24,15 +24,13 @@ def searchresult(request):
         query = request.GET.get('keyword')
         # GET방식으로 받은 KEYWORD를 QUERY라고 칭함
 
-        products = Product.objects.all().filter(
-            Q(name__icontains=query) |
-            Q(description__icontains=query) |
-            Q(cafe__icontains=query)
+        cafe = Cafe.objects.all().filter(
+            Q(name__contains=query)
         )
         # PRODUCT에서 filter를 통해 검사
         # __icontains로 name 안에 query와 동일한 값이 있는지 대소문자 상관없이 검색
 
-    return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
+    return render(request, 'recommend/recommend2.html', {'query': query})
     # 검색결과로 query랑 products 리턴
 
 
