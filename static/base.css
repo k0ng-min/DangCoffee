@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-
-    .팀 {
-        margin-top: 1rem;
-        text-align: center;
-        vertical-align: middle;
-        font-family: 'Jua', sans-serif;
-    }
-    .Dang {
-        margin : 2rem 0.5rem 5rem;
-        display : inline;
-        text-align: center;
-        line-height : 100px;
-        float: start;
-        color: #EBDDCC;
-        }
-    .log {
-        display: inline;
-        width: 120px;
-        text-align: center;
-        line-height: 70px;
-        float: right;
-        font-family: 'Jua', sans-serif;
-    }
-=======
 *{
     font-family: 'Jua', sans-serif;
     list-style: none;

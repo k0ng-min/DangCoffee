@@ -3,8 +3,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from recommend import views as recommend_views
-from accounts import views as accounts_views
-from mypage import views as mypage_views
+# from accounts import views as accounts_views
+# from mypage import views as mypage_views
 import infoapp.views
 from recommend import views
 
@@ -20,7 +20,6 @@ urlpatterns = [
     # part 2 : 정보
     path('info/', infoapp.views.productlist),
     path('info/', include('infoapp.urls')),
-    path('beverage/', include('beverage.urls'))
 
     # part 3 : 추천
     path('recommend1/', recommend_views.recommend1),
