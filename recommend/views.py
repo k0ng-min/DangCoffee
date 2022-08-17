@@ -56,4 +56,3 @@ def input_test(request):
     if request.POST:
         list_item = request.POST.getlist('test')
         print(list_item)
-
