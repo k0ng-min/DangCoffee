@@ -30,9 +30,8 @@ INSTALLED_APPS = [
     'infoapp',
     'recommend',
     'accounts',
-    'mypage',
-    
-    # 소셜 로그인 구현
+
+    # 소셜 로그인 구현 -> 비활성화 (22.08.18)
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -93,6 +92,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysql',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
+    }
+}
+"""
 
 
 # Password validation

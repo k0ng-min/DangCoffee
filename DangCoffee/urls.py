@@ -12,10 +12,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # 네임스페이스('home') 추가 (22.08.17)
 
-    # part 1 : 로그인, 마이페이지
+    # part 1 : 사용자 계정
     path('accounts/', include('accounts.urls')),
-    path('social_accounts/', include('allauth.urls')),
-    path('mypage/', include('mypage.urls')),
+    #  path('social_accounts/', include('allauth.urls')),
 
     # part 2 : 정보
     path('info/', infoapp.views.productlist),
