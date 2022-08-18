@@ -2,27 +2,27 @@
     <div class="intro_bg">
         <div class="header">
             <div class="logo">
-                <a href="" class="logoname">DangCoffee</a>
+                <a href="/" class="material-icons" style="padding-top: 10px; font-size: 35px;">coffee</a>
+                <a href="/" class="logoname">DangCoffee</a>
+
             </div>
 
             <ul class="nav">
-                <li><a>정보</a></li>
-                <li><a>추천</a></li>
-                <li><a>마이페이지</a></li>
-                <li><a>로그아웃</a></li>
+
+                <li><a href='/info'>정보</a></li>
+
+                <li><a href='/recommend1'>추천</a></li>
+
+                <!-- 로그인 비활성화 (22.08.18)
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'accounts:logout' %}"> Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                {% endif %}
+                -->
+
             </ul>
         </div>
-
-        <ul class = "intro_title">
-            <div class="searcharea">
-                    <!-- 입력받은 값이 name인 keyword이며 action은 어떻게 작동할 것인가에 대한 것-->
-                    <!-- method는 어떤 방식으로 보낼 것 인가 / 검색 = get-->
-                <form class="form-inline" action="{% url 'recommend:search' %}" method="get">
-                    <input type="search" placeholder="Search" name="keyword">
-                </form>
-            </div>
-        </ul>
     </div>
-
 </div>
 

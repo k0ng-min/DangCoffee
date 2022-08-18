@@ -7,7 +7,7 @@ from django.db.models import Q
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html') # 변경
 
 
 def recommend1(request):
@@ -18,31 +18,41 @@ def recommend2(request):
     return render(request, 'recommend/recommend2.html')
 
 
-def searchresult(request):
-    if 'keyword' in request.GET:
-        query = request.GET.get('keyword')
-        # GET방식으로 받은 KEYWORD를 QUERY라고 칭함
+def search(request):
+    if request.method == "POST":
 
-        products = Product.objects.all().filter(
-            Q(name__icontains=query) |
-            Q(description__icontains=query) |
-            Q(cafe__icontains=query)
-        )
-        # PRODUCT에서 filter를 통해 검사
-        # __icontains로 name 안에 query와 동일한 값이 있는지 대소문자 상관없이 검색
+        cafe = request.POST.getlist('cafe')
+        category = request.POST.getlist('category')
+        maxvalue = request.GET.get('priceRangeMax')
+        minvalue = request.GET.get('priceRangeMin')
+        query = "Tag List"
+
+        q = Q()
+        if cafe:
+            q &= Q(cafe__icontain=cafe)
+        if category:
+            q &= Q(category__icontain=category)
+        if maxvalue and minvalue:
+            q &= Product.objects.filter(price__range=[minvalue, maxvalue])
+
+        q &= Q(price__range=(minvalue, maxvalue))
+
+        products = Product.objects.filter(q)
+
+    else:
+
+        query = request.GET.get('keyword')
+
+        j = Q()
+        if query:
+            j |= Q(name__icontains=query)
+            j |= Q(description__icontains=query)
+            j |= Q(cafe__icontains=query)
+        products = Product.objects.filter(j)
 
     return render(request, 'recommend/recommend2.html', {'query': query, 'products': products})
-    # 검색결과로 query랑 products 리턴
 
-
-def filterresearch(request):
-    if 'cafelist' and 'drinklist' in request.GET:
-        cafe_list = request.GET.getlist('cafelist[]')
-        drink_list = request.GET.getlist('drinklist[]')
-
-        products = Product.objects.all().filter(
-            Q(cafe__icontains=cafe_list) &
-            Q(name_icontains=drink_list)
-        )
-
-    return render(request, 'recommend2.html', {'products': products})
+def input_test(request):
+    if request.POST:
+        list_item = request.POST.getlist('test')
+        print(list_item)

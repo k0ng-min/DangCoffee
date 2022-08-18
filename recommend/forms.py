@@ -6,4 +6,4 @@ from recommend.models import Product
 class recommendForm(ModelForm):
     class Meta:
         model = Product
-        fields = [ 'image', 'name', 'cafe', 'description', 'price', 'digital']
+        fields = [ 'image', 'name', 'cafe', 'price']
