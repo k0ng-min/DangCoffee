@@ -24,5 +24,4 @@ urlpatterns = [
     # part 3 : 추천
     path('recommend1/', recommend_views.recommend1),
     path('recommend2/', include('recommend.urls')),
-
 ]
