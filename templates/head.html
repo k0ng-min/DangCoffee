@@ -2,20 +2,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--  bootstrap link  --> <!-- 부트 스트랩 5.2.0 적용 (08.16)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/css/bootstrap.min.css' %}">
+
     <title>DangCoffee</title>
 
-    <!--  bootstrap link  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <!-- Favicons -->  <!-- 웹 사이트 주소창 로고 추가할 것 (08.16) -->
+    <link href="static/img/main_icon.svg" rel="icon">
 
-    <!--  GOOGLE FONTS LINK  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-
-    <!--  GOOGLE 한글 FONTS LINK  -->
+    <!--  GOOGLE 한글 FONTS LINK  --> <!-- GOOGLE FONTS LINK 내용과 중복 되어, 해당 항목 삭제함 (08.16) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
@@ -25,5 +22,19 @@
 
     <!-- DEFAULT CSS LINK -->
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+
+    <!-- AOS 라이브러리 --> <!-- 설명 추가 (08.16) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- 아래 항목 부트스트랩 템플릿 추가 항목 (08.16) -->
+    <!-- Vendor CSS Files -->
+    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 </head>

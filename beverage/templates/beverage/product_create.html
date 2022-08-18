@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}  PRODUCT REGISTER {% endblock title %}
+
+{% block content %}
+<form method="post">
+    {%csrf_token%}
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form%}
+
+            {% if field.name != 'category_choice'%}
+                <p>{{field.label}} : {{field}}</p>
+            {%else %}
+                <p>
+                {{field.label}} :
+                {% for check in form.cateogory_choice %}
+                    {{check}}
+                {% endfor %}
+                </p>
+            {% endif %}
+        {% endfor%}
+        <p>
+            <button class = 'btn btn-primary' type = 'submit'> REGISTERATION </button>
+        </p>
+
+    </form>
+</form>
+
+
+{% endblock content %}
