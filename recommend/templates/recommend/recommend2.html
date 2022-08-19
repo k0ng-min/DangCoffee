@@ -10,6 +10,8 @@
                 <div class="searcharea">
                     <h3><b>{{ query }}</b></h3>
                 </div>
+                                <a href="/recommend1" class="btn2" style="margin-left: 1000px; width: 60px; text-align: center;">돌아가기</a>
+
             </ul>
             <!-- // tag -->
 
@@ -27,8 +29,7 @@
                 {% for product in products %}
                     <div style="width: 18rem;">
                         <div class="card-body">
-                            <img class="card-img" src="/admin/image/">
-                            <h4 class="card-text">{{product.cafe}} | {{product.name}}</h4>
+                            <h4 class="card-text">{{product.name}}</h4>
                             <p class="card-text">{{product.price}}원</p>
                         </div>
                     </div>
@@ -36,8 +37,6 @@
                 {% if not products %}
                 <h3 style = "text-align:center; margin-top:30px" >검색 결과가 없습니다.</h3>
                 {% endif%}
-                <a href="/recommend1" class="btn2" style="margin-left: 500px; width: 60px; text-align: center;">돌아가기</a>
-
 
 
 

@@ -26,7 +26,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    product_id = models.IntegerField(verbose_name= 'app_id', null=True, blank = True)
+    product_id = models.IntegerField(verbose_name='app_id', null=True, blank=True)
     korean_name = models.CharField(max_length=100)
     english_name = models.CharField(max_length=100)
     description = models.CharField(max_length=300)
