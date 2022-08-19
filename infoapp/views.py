@@ -29,4 +29,3 @@ def productresult(request):
 
 
 
-
