@@ -8,6 +8,8 @@
     color: black;
 }
 
+
+
 .intro_bg{
     background-size: cover;
     height: 120px;
@@ -88,6 +90,40 @@
     border-radius:10px;
     text-align: center;
 }
+
+.info_search > form > input{
+    border: none;
+    width: 500px;
+    height: 40px;
+    background-color: gray;
+    color:black;
+    border-radius:10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-search-btn > form > botton{
+    border: none;
+    width: 500px;
+    height: 40px;
+    background-color: gray;
+    color:black;
+    border-radius:10px;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu_check {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 500px;
+}
+
+.tag{
+    justify-content: center;
+}
+
+
 /* 검색창 */
 
 
@@ -125,6 +161,7 @@
     position: relative;
     top: 100px;
     width:1280px;
+    height: 700px;
     margin:0 auto;
     padding-bottom: 50px;
     border-bottom: 1px;
@@ -137,7 +174,7 @@
     flex-direction: column;
     padding: 20px;
     width: 640px;
-    height: 2200px;
+    height: 700px;
 }
 
 
@@ -461,13 +498,4 @@ footer{
     display: inline-block;
     margin-right: 60px;
 }
-
-html, body {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    margin: 0;
-}
-
 /* footer */
-

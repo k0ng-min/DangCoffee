@@ -3,14 +3,54 @@
 
 {% block content %}
 
-    <div style="flex:1;">
-    <form action="info/result" method='GET'>
-        음료 검색: <input type='search' name='query'>
-        <input type='submit' value='검색'>
-    </form>
+<div class="wrap">
+    <div class="header">
+            <div class="info_search">
+                <form action="info/result" method='GET'>
+                음료 검색 : <input class="info-search-txt" type='search-txt' name='query' type="text" placeholder="Search"/>
+                <button class="info-search-btn" type='submit'>검색</button>
+                </form>
+            </div>
+    </div>
+</div>
+
+
+    <div class="tag">
+        <div class="menu_check">
+            <input type="checkbox" id="y1" \>
+            <label for="y1">커피/라떼</label>
+        </div>
+
+        <div class="menu_check">
+            <input type="checkbox" id="b1" \>
+            <label for="b1">티/티라떼</label>
+        </div>
+
+
+        <div class="menu_check">
+            <input type="checkbox" id="c1" \>
+            <label for="c1">에이드/스무디</label>
+        </div>
+
+        <div class="menu_check">
+             <input type="checkbox" id="d1" \>
+            <label for="d1">프라페</label>
+        </div>
+
+        <div class="menu_check">
+            <input type="checkbox" id="e1" \>
+            <label for="e1">생과일 주스</label>
+        </div>
+
+        <div class="menu_check">
+            <input type="checkbox" id="f1" \>
+            <label for="f1">차</label>
+        </div>
+
     </div>
 
-    <div>
+
+      <div class="header">
     <h1>음료 리스트</h1>
     {% for product in products %}
         {{ product.korean_name }}<br/>
@@ -20,4 +60,13 @@
     {% endfor %}
     </div>
 
+
+
+
+
+
+
+
+
 {% endblock %}
+
