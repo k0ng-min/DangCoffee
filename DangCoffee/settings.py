@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'infoapp',
     'recommend',
     'accounts',
+    'import_export',
 
     # 소셜 로그인 구현 -> 비활성화 (22.08.18)
     'django.contrib.sites',

@@ -8,9 +8,11 @@
     color: black;
 }
 
-.intro_bg{
+.wrap{
+    background-image: url("../static/img/cafeimage.jpg");
     background-size: cover;
-    height: 120px;
+    height: 720px;
+    position: relative;
 }
 
 /* 페이지 맨 윗 부분 */
@@ -22,6 +24,7 @@
 }
 
 .logo{
+    margin-top:10px;
     width: 300px;
     height: 40px;
     border-radius: 5px;
@@ -37,6 +40,7 @@
     font-weight: bold;
     font-size:40px;
     position: absolute;
+    margin-top: 10px;
 }
 
 .nav{
@@ -57,6 +61,10 @@
     color: black;
     font-size : 18px;
 }
+.nav > li > a:hover {
+  text-decoration: underline;
+  color: white;
+}
 /* 페이지 맨 윗 부분 */
 
 
@@ -67,26 +75,33 @@
 
 
 
-
-
-
 /* 검색창 */
+
+.wrapper{
+    height: 500px;
+}
 .intro_title{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 0px;
 }
 
 .searcharea > form > input{
     border: none;
     width: 500px;
-    height: 80px;
+    height: 90px;
+    margin-top: 100px;
     background-color: gray;
     color:black;
     border-radius:10px;
     text-align: center;
+}
+
+.recommend1{
+    top: -600px;
+    position: relative;
 }
 /* 검색창 */
 
@@ -106,7 +121,7 @@
     width: 1000px;
     height: 80px;
     background-color: transparent;
-    font-size: 30px;
+    font-size: 50px;
     color:white;
     padding-left: 10px;
     border-radius:10px;
@@ -123,7 +138,7 @@
     display: flex;
     background-color: white;
     position: relative;
-    top: 100px;
+    top: -500px;
     width:1280px;
     height: 700px;
     margin:0 auto;
@@ -150,6 +165,11 @@
 .result-text{
     border-bottom: 3px solid rgb(189, 189, 189);
 }
+
+.recommend2{
+    position: relative;
+    top: -600px;
+}
 /* research result */
 
 
@@ -162,15 +182,14 @@
     display: flex;
     background-color: white;
     position: relative;
-    top: -66px;
+    top: -800px;
     width:1290px;
     height: 400px;
-    margin:0 auto;
     padding-bottom: 50px;
     border-bottom: 1px;
     box-shadow: 2px 2px 2px 2px rgba(255,255,255,0.1);
-    margin-bottom: 50px;
-    margin-top : 200px;
+    border-radius: 20px 20px 20px 20px;
+    margin: 200px auto 0px;
 }
 
 .filter > li{
@@ -178,7 +197,7 @@
     flex-direction: column;
     padding: 20px;
     width: 430px;
-    height: 400px;
+    height:400px;
 }
 
 
@@ -437,7 +456,7 @@ footer{
 
       text-align: right;
 
-      color: white;
+      color: black;
 
       background: black;
   }
